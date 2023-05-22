@@ -1,0 +1,95 @@
+ 
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Update Employee</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+
+    button[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background-color: #4caf50;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Update Employee Information</h1>
+
+    <form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="post">
+      <div class="form-group">
+      <input type="hidden" th:field="*{eid}">
+        <label for="employeeName">Employee Name:</label>
+        <input type="text" id="employeeName"  th:field="*{ename}" required>
+      </div>
+
+      <div class="form-group">
+        <label for="employeeMobile">Mobile No:</label>
+        <input type="tel" id="employeeMobile"  th:field="*{mobileno}" required>
+      </div>
+
+      <div class="form-group">
+        <label for="employeeEmail">Email:</label>
+        <input type="email" id="employeeEmail"  th:field="*{email}" required>
+      </div>
+
+      <div class="form-group">
+        <label for="employeeDesignation">Employee Designation:</label>
+        <input type="text" id="employeeDesignation"  th:field="*{edesignation}" required>
+      </div>
+
+      <button type="submit">Update</button>
+    </form>
+
+  </div>
+
+</body>
+</html>
+ 
